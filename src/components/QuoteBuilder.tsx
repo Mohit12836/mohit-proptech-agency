@@ -58,17 +58,17 @@ Please confirm availability and share next steps.`;
   const waUrl = `https://wa.me/${AGENCY_CONFIG.rawPhone}?text=${encodeURIComponent(waQuoteText)}`;
 
   return (
-    <section id="quote-builder" className="py-24 bg-[#080C14] border-t border-slate-800 relative">
+    <section id="quote-builder" className="py-24 bg-[#141E33] border-t border-[#334155] relative">
       <div className="container-fluid space-y-12">
         {/* Section Heading */}
         <div className="max-w-3xl space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold tracking-wider uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-amber-400/15 border border-amber-400/30 text-amber-300 text-xs font-bold tracking-wider uppercase">
             Transparent Pricing Engine
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-            Interactive <span className="gold-gradient-text">Smart Quote Builder</span>
+            Interactive <span className="champagne-gradient-text">Smart Quote Builder</span>
           </h2>
-          <p className="text-slate-300 text-base sm:text-lg">
+          <p className="text-[#E2E8F0] text-base sm:text-lg font-medium leading-relaxed">
             अपनी जरूरत के हिसाब से सिस्टम कस्टमाइज़ करें। तुरंत अनुमानित बजट देखें और सीधे WhatsApp पर वन-क्लिक प्रपोज़ल प्राप्त करें।
           </p>
         </div>
@@ -79,27 +79,27 @@ Please confirm availability and share next steps.`;
           <div className="lg:col-span-2 space-y-8">
             {/* Step 1: Business Type */}
             <div className="space-y-4">
-              <label className="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider block">
+              <label className="text-xs font-mono font-bold text-amber-300 uppercase tracking-wider block">
                 STEP 1: आपका बिज़नेस मॉडल क्या है?
               </label>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {businessTypes.map((bt) => (
                   <button
                     key={bt.title}
                     onClick={() => setBusinessType(bt.title)}
                     className={`p-4 rounded-xl border text-left transition-all ${
                       businessType === bt.title
-                        ? "bg-slate-900 border-amber-400 ring-1 ring-amber-400/40"
-                        : "bg-slate-950/60 border-slate-800 hover:border-slate-700"
+                        ? "bg-[#28354D] border-amber-400 ring-2 ring-amber-400/30 shadow-md"
+                        : "bg-[#1E293B] border-[#334155] hover:border-[#475569]"
                     }`}
                   >
                     <div className="flex items-center justify-between mb-1">
-                      <span className="font-bold text-sm text-white">{bt.title}</span>
+                      <span className="font-black text-sm text-white">{bt.title}</span>
                       {businessType === bt.title && (
-                        <CheckCircle2 className="w-4 h-4 text-amber-400" />
+                        <CheckCircle2 className="w-5 h-5 text-amber-400" />
                       )}
                     </div>
-                    <p className="text-xs text-slate-400 leading-normal">{bt.desc}</p>
+                    <p className="text-xs text-slate-300 font-medium leading-normal">{bt.desc}</p>
                   </button>
                 ))}
               </div>
@@ -107,39 +107,39 @@ Please confirm availability and share next steps.`;
 
             {/* Step 2: Services Multi-select */}
             <div className="space-y-4">
-              <label className="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider block">
+              <label className="text-xs font-mono font-bold text-amber-300 uppercase tracking-wider block">
                 STEP 2: आपको कौन-सी सर्विसेज चाहिए? (एक या अधिक चुनें)
               </label>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {serviceOptions.map((opt) => {
                   const isChecked = selectedServices.includes(opt.id);
                   return (
                     <button
                       key={opt.id}
                       onClick={() => toggleService(opt.id)}
-                      className={`p-3.5 rounded-xl border text-left flex items-start justify-between gap-3 transition-all ${
+                      className={`p-4 rounded-xl border text-left flex items-start justify-between gap-3 transition-all ${
                         isChecked
-                          ? "bg-slate-900/90 border-emerald-500/70 shadow-sm shadow-emerald-500/10"
-                          : "bg-slate-950/40 border-slate-800/80 hover:border-slate-700"
+                          ? "bg-[#183329] border-emerald-400 shadow-md shadow-emerald-500/10"
+                          : "bg-[#1E293B] border-[#334155] hover:border-[#475569]"
                       }`}
                     >
                       <div>
-                        <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">
+                        <div className="text-[10px] uppercase font-black text-amber-300 tracking-wider">
                           {opt.category}
                         </div>
-                        <div className="font-bold text-xs sm:text-sm text-white mt-0.5">
+                        <div className="font-bold text-sm text-white mt-0.5">
                           {opt.name}
                         </div>
-                        <div className="text-[11px] text-amber-400 font-medium mt-1">
+                        <div className="text-xs text-amber-300 font-extrabold mt-1">
                           ₹{opt.baseMin.toLocaleString("en-IN")} – ₹{opt.baseMax.toLocaleString("en-IN")}
                         </div>
                       </div>
 
                       <div
-                        className={`w-5 h-5 rounded-md border flex items-center justify-center shrink-0 mt-1 transition-all ${
+                        className={`w-6 h-6 rounded-md border flex items-center justify-center shrink-0 mt-1 transition-all ${
                           isChecked
-                            ? "bg-emerald-500 border-emerald-400 text-black"
-                            : "border-slate-700 bg-slate-900"
+                            ? "bg-emerald-500 border-emerald-400 text-white"
+                            : "border-[#475569] bg-[#141E33]"
                         }`}
                       >
                         {isChecked && <CheckCircle2 className="w-4 h-4 text-white" />}
@@ -152,7 +152,7 @@ Please confirm availability and share next steps.`;
 
             {/* Step 3: Timeline */}
             <div className="space-y-4">
-              <label className="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider block">
+              <label className="text-xs font-mono font-bold text-amber-300 uppercase tracking-wider block">
                 STEP 3: काम कितने दिनों में लाइव चाहिए?
               </label>
               <div className="flex flex-wrap gap-3">
@@ -164,10 +164,10 @@ Please confirm availability and share next steps.`;
                   <button
                     key={t}
                     onClick={() => setTimeline(t)}
-                    className={`px-4 py-2.5 rounded-xl text-xs font-bold border transition-all ${
+                    className={`px-4 py-2.5 rounded-xl text-xs font-black border transition-all ${
                       timeline === t
-                        ? "bg-amber-400 text-black border-amber-400"
-                        : "bg-slate-900 border-slate-800 text-slate-300 hover:text-white"
+                        ? "bg-amber-400 text-slate-950 border-amber-400 shadow-md"
+                        : "bg-[#1E293B] border-[#475569] text-white hover:text-amber-300"
                     }`}
                   >
                     {t}
@@ -178,51 +178,51 @@ Please confirm availability and share next steps.`;
           </div>
 
           {/* Right Column: Live Estimate Box */}
-          <div className="rounded-2xl bg-gradient-to-b from-[#0F172A] to-[#0A0F1D] border-2 border-amber-500/40 p-6 sm:p-8 flex flex-col justify-between shadow-2xl space-y-6">
+          <div className="rounded-2xl bg-[#1E293B] border-2 border-amber-400 p-6 sm:p-8 flex flex-col justify-between shadow-2xl space-y-6">
             <div className="space-y-5">
-              <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                <span className="text-xs font-mono uppercase font-bold text-amber-400 flex items-center gap-1.5">
+              <div className="flex items-center justify-between border-b border-[#334155] pb-3">
+                <span className="text-xs font-mono uppercase font-black text-amber-300 flex items-center gap-1.5">
                   <Calculator className="w-4 h-4" /> Customized Quotation
                 </span>
-                <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-bold">
+                <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/40 font-black">
                   Zero Lock-In
                 </span>
               </div>
 
               <div>
-                <div className="text-xs text-slate-400 font-medium">Estimated Investment:</div>
+                <div className="text-xs text-slate-300 font-bold uppercase tracking-wide">Estimated Investment:</div>
                 <div className="text-3xl sm:text-4xl font-black text-amber-400 tracking-tight mt-1">
                   ₹{totalMin.toLocaleString("en-IN")} – ₹{totalMax.toLocaleString("en-IN")}
                 </div>
-                <div className="text-[11px] text-slate-400 mt-1">
+                <div className="text-xs text-slate-300 mt-1 font-medium">
                   * अंतिम कीमत आपकी सटीक कस्टम आवश्यकताओं पर निर्भर करेगी।
                 </div>
               </div>
 
-              <div className="space-y-2.5 text-xs border-t border-slate-800 pt-4">
-                <div className="flex justify-between text-slate-300">
-                  <span className="text-slate-400">Target Business:</span>
+              <div className="space-y-3 text-xs sm:text-sm border-t border-[#334155] pt-4">
+                <div className="flex justify-between text-slate-200">
+                  <span className="text-slate-300 font-medium">Target Business:</span>
                   <span className="font-bold text-white text-right">{businessType}</span>
                 </div>
-                <div className="flex justify-between text-slate-300">
-                  <span className="text-slate-400">Total Solutions Selected:</span>
-                  <span className="font-bold text-emerald-400">{selectedServices.length} Modules</span>
+                <div className="flex justify-between text-slate-200">
+                  <span className="text-slate-300 font-medium">Total Solutions Selected:</span>
+                  <span className="font-black text-emerald-300">{selectedServices.length} Modules</span>
                 </div>
-                <div className="flex justify-between text-slate-300">
-                  <span className="text-slate-400">Delivery Target:</span>
+                <div className="flex justify-between text-slate-200">
+                  <span className="text-slate-300 font-medium">Delivery Target:</span>
                   <span className="font-bold text-white">{timeline}</span>
                 </div>
-                <div className="flex justify-between text-slate-300">
-                  <span className="text-slate-400">Source Code:</span>
-                  <span className="font-bold text-amber-400">100% Client Ownership</span>
+                <div className="flex justify-between text-slate-200">
+                  <span className="text-slate-300 font-medium">Source Code:</span>
+                  <span className="font-black text-amber-300">100% Client Ownership</span>
                 </div>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 text-xs space-y-2">
-                <div className="font-bold text-slate-200 flex items-center gap-1.5">
+              <div className="p-4 rounded-xl bg-[#141E33] border border-[#334155] text-xs space-y-2">
+                <div className="font-bold text-white flex items-center gap-1.5">
                   <Shield className="w-4 h-4 text-emerald-400" /> All Packages Include:
                 </div>
-                <ul className="space-y-1 text-slate-400 text-[11px]">
+                <ul className="space-y-1.5 text-slate-200 font-medium text-xs">
                   <li>✓ 1-Year Fast Cloud Hosting & SSL</li>
                   <li>✓ Official WhatsApp Cloud API Integration</li>
                   <li>✓ Full Staff Onboarding & Handover Training</li>
@@ -231,19 +231,19 @@ Please confirm availability and share next steps.`;
               </div>
             </div>
 
-            <div className="pt-4 border-t border-slate-800 space-y-3">
+            <div className="pt-4 border-t border-[#334155] space-y-3">
               <a
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2.5 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-black text-sm shadow-xl shadow-emerald-500/25 transition-all btn-tactile"
+                className="w-full flex items-center justify-center gap-2.5 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm shadow-xl shadow-emerald-600/30 transition-all btn-tactile"
               >
                 <MessageSquare className="w-5 h-5 fill-white" />
                 <span>Send This Quote to Mohit on WhatsApp</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
-              <p className="text-[11px] text-center text-slate-500">
+              <p className="text-xs text-center text-slate-300 font-medium">
                 सीधे मोहित पी जैन के साथ 15-मिनट स्ट्रैटेजी कॉल फ्री में बुक करें।
               </p>
             </div>

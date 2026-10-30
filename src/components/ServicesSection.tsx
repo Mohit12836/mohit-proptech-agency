@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AGENCY_CONFIG, ServiceDetail } from "@/config/agency";
+import { AGENCY_CONFIG } from "@/config/agency";
 import { 
   Globe, 
   Database, 
@@ -15,8 +15,7 @@ import {
   AlertCircle, 
   ArrowRight, 
   Clock, 
-  Tag, 
-  ExternalLink 
+  Tag
 } from "lucide-react";
 
 export default function ServicesSection() {
@@ -50,31 +49,31 @@ export default function ServicesSection() {
       });
 
   return (
-    <section id="solutions" className="py-24 bg-[#080C14] border-t border-slate-800/80 relative">
+    <section id="solutions" className="py-24 bg-[#141E33] border-t border-[#334155] relative">
       <div className="container-fluid space-y-12">
         {/* Section Header */}
         <div className="max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold tracking-wider uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-amber-400/15 border border-amber-400/30 text-amber-300 text-xs font-bold tracking-wider uppercase">
             Complete Digital System for Property Businesses
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-            Our 8 Specialized <span className="gold-gradient-text">PropTech Solutions</span>
+            Our 8 Specialized <span className="champagne-gradient-text">PropTech Solutions</span>
           </h2>
-          <p className="text-slate-300 text-base sm:text-lg">
+          <p className="text-[#E2E8F0] text-base sm:text-lg font-medium leading-relaxed">
             आपकी जरूरत के हिसाब से हर सेवा अलग से उपलब्ध है। कोई छिपा हुआ चार्ज नहीं, पूरा सोर्स कोड और डेटाबेस आपका होगा।
           </p>
         </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap items-center gap-2 pt-2">
+        <div className="flex flex-wrap items-center gap-2.5 pt-2">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
                 activeCategory === cat.id
-                  ? "bg-amber-400 text-black shadow-lg shadow-amber-400/20"
-                  : "bg-slate-900/80 text-slate-300 border border-slate-800 hover:border-slate-700 hover:text-white"
+                  ? "bg-amber-400 text-slate-950 shadow-md shadow-amber-400/30"
+                  : "bg-[#1E293B] text-slate-200 border border-[#475569] hover:border-amber-400 hover:text-white"
               }`}
             >
               {cat.label}
@@ -82,7 +81,7 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        {/* Service Cards Grid */}
+        {/* Service Cards Grid (Titanium Card Architecture) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {filteredServices.map((service) => {
             const Icon = categoryIcons[service.number] || Globe;
@@ -93,72 +92,69 @@ export default function ServicesSection() {
             return (
               <div
                 key={service.id}
-                className="rounded-2xl bg-gradient-to-b from-[#0F172A] to-[#0A0F1D] border border-slate-800 p-6 sm:p-8 flex flex-col justify-between hover:border-amber-500/40 transition-all shadow-xl group relative overflow-hidden"
+                className="rounded-2xl bg-[#1E293B] border border-[#334155] p-6 sm:p-8 flex flex-col justify-between hover:border-amber-400 hover:shadow-2xl hover:shadow-amber-500/10 transition-all group relative overflow-hidden"
               >
-                {/* Glow Accent */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-3xl pointer-events-none group-hover:bg-amber-500/10 transition-all" />
-
                 <div className="space-y-6">
                   {/* Card Header */}
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-400 group-hover:scale-105 group-hover:bg-amber-500/20 transition-all">
+                      <div className="w-13 h-13 p-3 rounded-xl bg-amber-400/15 border border-amber-400/30 flex items-center justify-center text-amber-300 group-hover:scale-105 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all shadow-sm">
                         <Icon className="w-6 h-6" />
                       </div>
                       <div>
                         <span className="text-xs font-mono font-bold text-amber-400">
                           SOLUTION {service.number}
                         </span>
-                        <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-amber-200 transition-colors">
+                        <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-amber-200 transition-colors">
                           {service.title}
                         </h3>
-                        <p className="text-xs font-medium text-amber-400/80 mt-0.5">
+                        <p className="text-xs font-bold text-amber-300 mt-0.5">
                           {service.hindiTitle}
                         </p>
                       </div>
                     </div>
 
                     {service.badge && (
-                      <span className="shrink-0 text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                      <span className="shrink-0 text-[11px] font-black px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/40">
                         {service.badge}
                       </span>
                     )}
                   </div>
 
                   {/* Tagline */}
-                  <p className="text-sm text-slate-300 leading-relaxed font-normal">
+                  <p className="text-sm sm:text-base text-[#E2E8F0] leading-relaxed font-normal">
                     {service.tagline}
                   </p>
 
                   {/* Problem vs Solution Comparison Box */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-4 rounded-xl bg-slate-950/60 border border-slate-800/80 text-xs">
-                    <div className="space-y-1 text-rose-300/90">
-                      <div className="flex items-center gap-1.5 font-bold text-rose-400">
-                        <AlertCircle className="w-3.5 h-3.5" />
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-4 rounded-xl bg-[#141E33] border border-[#334155] text-xs">
+                    <div className="space-y-1.5 p-2 rounded-lg bg-[#271822] border border-rose-900/60">
+                      <div className="flex items-center gap-1.5 font-black text-rose-400">
+                        <AlertCircle className="w-4 h-4 shrink-0" />
                         <span>समस्या (The Problem)</span>
                       </div>
-                      <p className="text-slate-400 leading-normal">{service.clientProblem}</p>
+                      <p className="text-rose-200 font-medium leading-relaxed">{service.clientProblem}</p>
                     </div>
 
-                    <div className="space-y-1 text-emerald-300/90 pt-3 sm:pt-0 sm:border-l sm:border-slate-800 sm:pl-3">
-                      <div className="flex items-center gap-1.5 font-bold text-emerald-400">
-                        <CheckCircle2 className="w-3.5 h-3.5" />
-                        <span>हमारा समाधान (Our Fix)</span>
+                    <div className="space-y-1.5 p-2 rounded-lg bg-[#112920] border border-emerald-900/60">
+                      <div className="flex items-center gap-1.5 font-black text-emerald-400">
+                        <CheckCircle2 className="w-4 h-4 shrink-0" />
+                        <span>हमारा समाधान (Our Solution)</span>
                       </div>
-                      <p className="text-slate-300 leading-normal">{service.ourSolution}</p>
+                      <p className="text-emerald-100 font-medium leading-relaxed">{service.ourSolution}</p>
                     </div>
                   </div>
 
                   {/* Sub-categories tags */}
                   <div className="space-y-2">
-                    <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                    <div className="text-xs font-bold text-slate-300 uppercase tracking-wider">
                       Included Modules:
                     </div>
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-2">
                       {service.subCategories.map((sub, idx) => (
                         <span
                           key={idx}
-                          className="text-[11px] px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300 font-medium"
+                          className="text-xs px-3 py-1 rounded-lg bg-[#141E33] border border-[#475569] text-white font-semibold"
                         >
                           {sub}
                         </span>
@@ -168,13 +164,13 @@ export default function ServicesSection() {
 
                   {/* Key Features Checklist */}
                   <div className="space-y-2 pt-1">
-                    <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                    <div className="text-xs font-bold text-slate-300 uppercase tracking-wider">
                       Key Capabilities:
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                       {service.keyFeatures.slice(0, 6).map((feat, idx) => (
-                        <div key={idx} className="flex items-start gap-2 text-slate-300">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
+                        <div key={idx} className="flex items-start gap-2 text-[#E2E8F0] font-medium">
+                          <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                           <span>{feat}</span>
                         </div>
                       ))}
@@ -183,19 +179,19 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Footer Pricing & CTA Area */}
-                <div className="pt-6 mt-6 border-t border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="pt-6 mt-6 border-t border-[#334155] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div>
-                    <div className="text-[11px] text-slate-400 uppercase font-semibold flex items-center gap-1">
-                      <Tag className="w-3 h-3 text-amber-400" /> Investment Range
+                    <div className="text-xs text-slate-300 uppercase font-bold flex items-center gap-1.5">
+                      <Tag className="w-3.5 h-3.5 text-amber-400" /> Investment Range
                     </div>
-                    <div className="text-lg font-black text-amber-400">
+                    <div className="text-xl font-black text-amber-400 mt-0.5">
                       {service.priceRange.min} – {service.priceRange.max}
-                      <span className="text-xs font-normal text-slate-400 ml-1">
+                      <span className="text-xs font-semibold text-slate-300 ml-1">
                         ({service.priceRange.billingType})
                       </span>
                     </div>
-                    <div className="text-[11px] text-slate-500 flex items-center gap-1 mt-0.5">
-                      <Clock className="w-3 h-3 text-slate-400" /> Delivery: {service.timeline}
+                    <div className="text-xs text-slate-300 font-medium flex items-center gap-1 mt-1">
+                      <Clock className="w-3.5 h-3.5 text-amber-400" /> Delivery: {service.timeline}
                     </div>
                   </div>
 
@@ -203,11 +199,11 @@ export default function ServicesSection() {
                     href={waUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold text-xs shadow-lg shadow-emerald-600/20 transition-all btn-tactile"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs shadow-lg shadow-emerald-600/30 transition-all btn-tactile"
                   >
-                    <MessageSquare className="w-3.5 h-3.5 fill-white" />
+                    <MessageSquare className="w-4 h-4 fill-white" />
                     <span>Inquire for Solution {service.number}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>
               </div>

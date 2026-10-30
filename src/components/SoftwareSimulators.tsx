@@ -73,17 +73,17 @@ export default function SoftwareSimulators() {
   const currentUnit = erpUnits[selectedUnit];
 
   return (
-    <section id="demos" className="py-24 bg-[#0B1220] border-t border-slate-800 relative overflow-hidden">
+    <section id="demos" className="py-24 bg-[#0F172A] border-t border-[#334155] relative overflow-hidden">
       <div className="container-fluid space-y-12">
         {/* Section Heading */}
         <div className="max-w-3xl space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold tracking-wider uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-bold tracking-wider uppercase">
             Interactive PropTech Interface Simulator
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
             See the Software in Action <span className="emerald-gradient-text">Before You Invest</span>
           </h2>
-          <p className="text-slate-300 text-base sm:text-lg">
+          <p className="text-[#E2E8F0] text-base sm:text-lg font-medium leading-relaxed">
             हम सामान्य बातें नहीं करते — नीचे दिए गए टैब्स पर क्लिक करें और देखें कि आपका CRM, ERP और AI WhatsApp सिस्टम वास्तव में कैसे काम करेगा।
           </p>
         </div>
@@ -94,8 +94,8 @@ export default function SoftwareSimulators() {
             onClick={() => setActiveTab("crm")}
             className={`flex items-center gap-2.5 px-5 py-3 rounded-xl font-bold text-sm transition-all ${
               activeTab === "crm"
-                ? "bg-amber-400 text-black shadow-lg shadow-amber-400/20"
-                : "bg-slate-900 border border-slate-800 text-slate-300 hover:text-white"
+                ? "bg-amber-400 text-slate-950 shadow-lg shadow-amber-400/30"
+                : "bg-[#1E293B] border border-[#475569] text-white hover:text-amber-300"
             }`}
           >
             <Database className="w-4 h-4" />
@@ -106,8 +106,8 @@ export default function SoftwareSimulators() {
             onClick={() => setActiveTab("erp")}
             className={`flex items-center gap-2.5 px-5 py-3 rounded-xl font-bold text-sm transition-all ${
               activeTab === "erp"
-                ? "bg-amber-400 text-black shadow-lg shadow-amber-400/20"
-                : "bg-slate-900 border border-slate-800 text-slate-300 hover:text-white"
+                ? "bg-amber-400 text-slate-950 shadow-lg shadow-amber-400/30"
+                : "bg-[#1E293B] border border-[#475569] text-white hover:text-amber-300"
             }`}
           >
             <Building className="w-4 h-4" />
@@ -118,8 +118,8 @@ export default function SoftwareSimulators() {
             onClick={() => setActiveTab("whatsapp")}
             className={`flex items-center gap-2.5 px-5 py-3 rounded-xl font-bold text-sm transition-all ${
               activeTab === "whatsapp"
-                ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/25"
-                : "bg-slate-900 border border-slate-800 text-slate-300 hover:text-white"
+                ? "bg-emerald-600 text-white shadow-lg shadow-emerald-600/30"
+                : "bg-[#1E293B] border border-[#475569] text-white hover:text-emerald-300"
             }`}
           >
             <MessageSquare className="w-4 h-4" />
@@ -129,17 +129,17 @@ export default function SoftwareSimulators() {
 
         {/* SIMULATOR 1: CRM LEAD BOARD */}
         {activeTab === "crm" && (
-          <div className="rounded-2xl bg-[#080C14] border border-slate-800 p-6 sm:p-8 space-y-6 shadow-2xl">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+          <div className="rounded-2xl bg-[#141E33] border border-[#334155] p-6 sm:p-8 space-y-6 shadow-2xl">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-[#334155] pb-4">
               <div>
                 <span className="text-xs font-mono text-amber-400 font-bold uppercase">LIVE CRM PREVIEW</span>
-                <h3 className="text-xl font-extrabold text-white">Daily Broker Sales Pipeline</h3>
+                <h3 className="text-xl font-black text-white">Daily Broker Sales Pipeline</h3>
               </div>
-              <div className="flex items-center gap-2 text-xs">
-                <span className="px-3 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-bold">
+              <div className="flex items-center gap-3 text-xs">
+                <span className="px-3 py-1.5 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-400/40 font-bold">
                   ● 7 Active Leads
                 </span>
-                <span className="px-3 py-1 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 font-bold">
+                <span className="px-3 py-1.5 rounded-lg bg-amber-400/20 text-amber-300 border border-amber-400/40 font-bold">
                   Pipeline Value: ₹4.2 Crore
                 </span>
               </div>
@@ -148,50 +148,50 @@ export default function SoftwareSimulators() {
             {/* Kanban Columns */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {crmColumns.map((col, idx) => (
-                <div key={idx} className="rounded-xl bg-slate-900/70 border border-slate-800 p-4 space-y-3">
-                  <div className="flex items-center justify-between text-xs font-bold text-slate-300">
+                <div key={idx} className="rounded-xl bg-[#1E293B] border border-[#334155] p-4 space-y-3 shadow-md">
+                  <div className="flex items-center justify-between text-xs font-black text-white">
                     <span>{col.title}</span>
-                    <span className="w-5 h-5 rounded-full bg-slate-800 text-amber-400 flex items-center justify-center text-[10px]">
+                    <span className="w-6 h-6 rounded-full bg-[#141E33] text-amber-300 flex items-center justify-center text-xs font-bold border border-[#475569]">
                       {col.count}
                     </span>
                   </div>
 
-                  <div className="space-y-2.5">
+                  <div className="space-y-3">
                     {col.leads.map((lead, lIdx) => (
                       <div
                         key={lIdx}
-                        className="rounded-lg bg-[#0F172A] border border-slate-700/60 p-3 space-y-2 hover:border-amber-500/50 transition-colors shadow-sm"
+                        className="rounded-xl bg-[#243248] border border-[#475569] p-3.5 space-y-2 hover:border-amber-400 transition-colors shadow-sm"
                       >
                         <div className="flex items-center justify-between">
-                          <span className="font-bold text-xs text-white">{lead.name}</span>
+                          <span className="font-black text-xs text-white">{lead.name}</span>
                           <span
-                            className={`text-[9px] px-1.5 py-0.5 rounded font-black uppercase ${
+                            className={`text-[10px] px-2 py-0.5 rounded font-black uppercase ${
                               lead.score === "Hot"
-                                ? "bg-rose-500/20 text-rose-400 border border-rose-500/30"
+                                ? "bg-rose-500 text-white"
                                 : lead.score === "Won"
-                                ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
-                                : "bg-amber-500/20 text-amber-400 border border-amber-500/30"
+                                ? "bg-emerald-500 text-white"
+                                : "bg-amber-400 text-slate-950"
                             }`}
                           >
                             {lead.score}
                           </span>
                         </div>
 
-                        <p className="text-[11px] text-slate-300 font-medium leading-tight">
+                        <p className="text-xs text-[#E2E8F0] font-semibold leading-tight">
                           {lead.property}
                         </p>
 
-                        <div className="flex items-center justify-between text-[10px] text-slate-400 pt-1 border-t border-slate-800">
-                          <span className="font-bold text-amber-400">{lead.budget}</span>
-                          <span>{lead.time}</span>
+                        <div className="flex items-center justify-between text-xs text-slate-300 pt-2 border-t border-[#334155]">
+                          <span className="font-black text-amber-300">{lead.budget}</span>
+                          <span className="font-medium text-slate-300">{lead.time}</span>
                         </div>
 
-                        <div className="flex items-center gap-1.5 pt-1">
-                          <button className="flex-1 py-1 rounded bg-slate-800 hover:bg-slate-700 text-[10px] font-semibold text-slate-200 flex items-center justify-center gap-1">
-                            <Phone className="w-2.5 h-2.5 text-amber-400" /> Call
+                        <div className="flex items-center gap-2 pt-1">
+                          <button className="flex-1 py-1.5 rounded-lg bg-[#1E293B] hover:bg-[#334155] border border-[#475569] text-xs font-bold text-white flex items-center justify-center gap-1 transition-colors">
+                            <Phone className="w-3 h-3 text-amber-400" /> Call
                           </button>
-                          <button className="flex-1 py-1 rounded bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-600/30 text-[10px] font-semibold text-emerald-300 flex items-center justify-center gap-1">
-                            <MessageSquare className="w-2.5 h-2.5 text-emerald-400" /> WhatsApp
+                          <button className="flex-1 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-xs font-black text-white flex items-center justify-center gap-1 shadow-sm transition-colors">
+                            <MessageSquare className="w-3 h-3 fill-white" /> WhatsApp
                           </button>
                         </div>
                       </div>
@@ -205,21 +205,21 @@ export default function SoftwareSimulators() {
 
         {/* SIMULATOR 2: BUILDER ERP INVENTORY */}
         {activeTab === "erp" && (
-          <div className="rounded-2xl bg-[#080C14] border border-slate-800 p-6 sm:p-8 space-y-6 shadow-2xl">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+          <div className="rounded-2xl bg-[#141E33] border border-[#334155] p-6 sm:p-8 space-y-6 shadow-2xl">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-[#334155] pb-4">
               <div>
                 <span className="text-xs font-mono text-amber-400 font-bold uppercase">LIVE ERP INVENTORY MATRIX</span>
-                <h3 className="text-xl font-extrabold text-white">Grand Royal Palms Colony – Phase 1</h3>
+                <h3 className="text-xl font-black text-white">Grand Royal Palms Colony – Phase 1</h3>
               </div>
-              <div className="flex flex-wrap items-center gap-3 text-xs">
-                <span className="flex items-center gap-1.5 text-emerald-400">
-                  <span className="w-2.5 h-2.5 rounded bg-emerald-500" /> Available (4)
+              <div className="flex flex-wrap items-center gap-4 text-xs font-bold">
+                <span className="flex items-center gap-2 text-emerald-300 bg-[#1E293B] px-3 py-1 rounded-full border border-emerald-500/40">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" /> Available (4)
                 </span>
-                <span className="flex items-center gap-1.5 text-amber-400">
-                  <span className="w-2.5 h-2.5 rounded bg-amber-500" /> On Hold (1)
+                <span className="flex items-center gap-2 text-amber-300 bg-[#1E293B] px-3 py-1 rounded-full border border-amber-500/40">
+                  <span className="w-2.5 h-2.5 rounded-full bg-amber-400" /> On Hold (1)
                 </span>
-                <span className="flex items-center gap-1.5 text-rose-400">
-                  <span className="w-2.5 h-2.5 rounded bg-rose-500" /> Booked / Sold (3)
+                <span className="flex items-center gap-2 text-rose-300 bg-[#1E293B] px-3 py-1 rounded-full border border-rose-500/40">
+                  <span className="w-2.5 h-2.5 rounded-full bg-rose-500" /> Booked / Sold (3)
                 </span>
               </div>
             </div>
@@ -232,16 +232,16 @@ export default function SoftwareSimulators() {
                   <button
                     key={u.id}
                     onClick={() => setSelectedUnit(idx)}
-                    className={`p-3.5 rounded-xl border text-left transition-all ${
+                    className={`p-4 rounded-xl border text-left transition-all ${
                       selectedUnit === idx
-                        ? "border-amber-400 ring-2 ring-amber-400/20 bg-slate-900"
-                        : "bg-slate-950/80 border-slate-800 hover:border-slate-700"
+                        ? "border-amber-400 ring-2 ring-amber-400/40 bg-[#28354D]"
+                        : "bg-[#1E293B] border-[#334155] hover:border-[#475569]"
                     }`}
                   >
                     <div className="flex items-center justify-between mb-1">
-                      <span className="font-bold text-sm text-white">Unit #{u.id}</span>
+                      <span className="font-black text-sm text-white">Unit #{u.id}</span>
                       <span
-                        className={`w-2 h-2 rounded-full ${
+                        className={`w-3 h-3 rounded-full ${
                           u.status === "Available"
                             ? "bg-emerald-400 shadow-sm shadow-emerald-400"
                             : u.status === "Hold"
@@ -250,54 +250,54 @@ export default function SoftwareSimulators() {
                         }`}
                       />
                     </div>
-                    <div className="text-[11px] text-slate-400">{u.type} • {u.size}</div>
-                    <div className="text-xs font-bold text-amber-300 mt-2">{u.price}</div>
-                    <div className="text-[10px] mt-1 text-slate-400 truncate">{u.status}</div>
+                    <div className="text-xs text-slate-300 font-medium">{u.type} • {u.size}</div>
+                    <div className="text-sm font-black text-amber-300 mt-2">{u.price}</div>
+                    <div className="text-xs mt-1 font-bold text-white truncate">{u.status}</div>
                   </button>
                 ))}
               </div>
 
               {/* Selected Unit Details Drawer */}
-              <div className="rounded-xl bg-[#0F172A] border border-slate-700 p-5 space-y-4">
-                <div className="border-b border-slate-800 pb-3">
-                  <span className="text-[10px] font-mono uppercase text-amber-400 font-bold">Selected Property Record</span>
-                  <h4 className="text-lg font-bold text-white">Unit #{currentUnit.id} ({currentUnit.type})</h4>
+              <div className="rounded-xl bg-[#1E293B] border border-[#475569] p-5 space-y-4 shadow-lg">
+                <div className="border-b border-[#334155] pb-3">
+                  <span className="text-xs font-mono uppercase text-amber-400 font-bold">Selected Property Record</span>
+                  <h4 className="text-lg font-black text-white">Unit #{currentUnit.id} ({currentUnit.type})</h4>
                 </div>
 
-                <div className="space-y-2.5 text-xs">
-                  <div className="flex justify-between py-1 border-b border-slate-800/80">
-                    <span className="text-slate-400">Total Carpet Area:</span>
-                    <span className="font-bold text-white">{currentUnit.size}</span>
+                <div className="space-y-3 text-xs sm:text-sm">
+                  <div className="flex justify-between py-1.5 border-b border-[#334155]">
+                    <span className="text-slate-300 font-medium">Total Carpet Area:</span>
+                    <span className="font-black text-white">{currentUnit.size}</span>
                   </div>
-                  <div className="flex justify-between py-1 border-b border-slate-800/80">
-                    <span className="text-slate-400">Base Selling Price:</span>
-                    <span className="font-bold text-amber-400">{currentUnit.price}</span>
+                  <div className="flex justify-between py-1.5 border-b border-[#334155]">
+                    <span className="text-slate-300 font-medium">Base Selling Price:</span>
+                    <span className="font-black text-amber-300">{currentUnit.price}</span>
                   </div>
-                  <div className="flex justify-between py-1 border-b border-slate-800/80">
-                    <span className="text-slate-400">Current Status:</span>
+                  <div className="flex justify-between py-1.5 border-b border-[#334155]">
+                    <span className="text-slate-300 font-medium">Current Status:</span>
                     <span
-                      className={`font-black px-2 py-0.5 rounded text-[10px] ${
+                      className={`font-black px-2.5 py-0.5 rounded text-xs ${
                         currentUnit.status === "Available"
-                          ? "bg-emerald-500/20 text-emerald-400"
+                          ? "bg-emerald-500 text-white"
                           : currentUnit.status === "Hold"
-                          ? "bg-amber-500/20 text-amber-400"
-                          : "bg-rose-500/20 text-rose-400"
+                          ? "bg-amber-400 text-slate-950"
+                          : "bg-rose-600 text-white"
                       }`}
                     >
                       {currentUnit.status}
                     </span>
                   </div>
-                  <div className="flex justify-between py-1 border-b border-slate-800/80">
-                    <span className="text-slate-400">Client / Buyer:</span>
-                    <span className="font-medium text-slate-200 text-right">{currentUnit.client}</span>
+                  <div className="flex justify-between py-1.5 border-b border-[#334155]">
+                    <span className="text-slate-300 font-medium">Client / Buyer:</span>
+                    <span className="font-bold text-white text-right">{currentUnit.client}</span>
                   </div>
                 </div>
 
-                <div className="pt-2 space-y-2">
-                  <button className="w-full py-2.5 rounded-lg bg-amber-400 hover:bg-amber-300 text-black font-extrabold text-xs transition-colors">
+                <div className="pt-2 space-y-2.5">
+                  <button className="w-full py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs transition-colors shadow-md">
                     Generate Booking Demand Note (PDF)
                   </button>
-                  <button className="w-full py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold">
+                  <button className="w-full py-2.5 rounded-xl bg-[#141E33] hover:bg-[#28354D] border border-[#475569] text-white text-xs font-bold transition-colors">
                     Change Unit Status / Hold Timer
                   </button>
                 </div>
@@ -308,89 +308,89 @@ export default function SoftwareSimulators() {
 
         {/* SIMULATOR 3: WHATSAPP AI SALES CLOSER */}
         {activeTab === "whatsapp" && (
-          <div className="max-w-2xl mx-auto rounded-3xl bg-[#080C14] border-4 border-slate-800 p-4 sm:p-6 shadow-2xl space-y-4">
+          <div className="max-w-2xl mx-auto rounded-3xl bg-[#141E33] border-4 border-[#334155] p-4 sm:p-6 shadow-2xl space-y-4">
             {/* WhatsApp App Header */}
-            <div className="flex items-center gap-3 p-3 rounded-2xl bg-[#1F2C34] text-white">
-              <div className="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center font-bold text-sm">
+            <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-[#1F2C34] text-white border border-[#334155]">
+              <div className="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center font-black text-sm">
                 AI
               </div>
               <div className="flex-1">
-                <div className="flex items-center gap-1.5">
-                  <span className="font-bold text-sm">Mohit PropTech AI Assistant</span>
-                  <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                <div className="flex items-center gap-2">
+                  <span className="font-extrabold text-sm text-white">Mohit PropTech AI Assistant</span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
                 </div>
-                <div className="text-[10px] text-emerald-400 font-medium">Official Cloud API • Verified Bot</div>
+                <div className="text-xs text-emerald-300 font-bold">Official Cloud API • Verified Business Bot</div>
               </div>
             </div>
 
             {/* Conversation Flow */}
-            <div className="space-y-3 py-2 text-xs leading-relaxed max-h-[360px] overflow-y-auto px-1">
+            <div className="space-y-3.5 py-3 text-xs sm:text-sm leading-relaxed max-h-[380px] overflow-y-auto px-1">
               {/* Buyer Message */}
               <div className="flex justify-end">
-                <div className="max-w-[80%] rounded-2xl rounded-tr-none bg-[#005C4B] text-white p-3 shadow">
-                  <p>Hi, I saw your ad for 3BHK flats near Super Corridor. What is the starting rate?</p>
-                  <span className="text-[9px] text-emerald-200 block text-right mt-1">11:02 PM</span>
+                <div className="max-w-[80%] rounded-2xl rounded-tr-none bg-[#005C4B] text-white p-3.5 shadow-md">
+                  <p className="font-medium">Hi, I saw your ad for 3BHK flats near Super Corridor. What is the starting rate?</p>
+                  <span className="text-[10px] text-emerald-200 block text-right mt-1 font-mono">11:02 PM</span>
                 </div>
               </div>
 
               {/* Bot Reply */}
               <div className="flex justify-start">
-                <div className="max-w-[85%] rounded-2xl rounded-tl-none bg-[#202C33] text-slate-100 p-3 shadow space-y-2">
-                  <p>
-                    🙏 <strong>नमस्ते शर्मा जी!</strong> हमारे प्रीमियम 3 BHK फ्लैट्स ₹54 लाख से शुरू होते हैं।
+                <div className="max-w-[85%] rounded-2xl rounded-tl-none bg-[#243248] border border-[#475569] text-white p-3.5 shadow-md space-y-2">
+                  <p className="font-medium">
+                    🙏 <strong className="text-amber-300">नमस्ते शर्मा जी!</strong> हमारे प्रीमियम 3 BHK फ्लैट्स ₹54 लाख से शुरू होते हैं।
                   </p>
-                  <p>क्या आप तुरंत शिफ्टिंग (Ready-to-Move) या न्यू प्रोजेक्ट खोज रहे हैं?</p>
-                  <span className="text-[9px] text-slate-400 block text-right">11:02 PM • Bot (Instant 3s)</span>
+                  <p className="font-medium">क्या आप तुरंत शिफ्टिंग (Ready-to-Move) या न्यू प्रोजेक्ट खोज रहे हैं?</p>
+                  <span className="text-[10px] text-slate-300 block text-right font-mono">11:02 PM • Bot (Instant 3s)</span>
                 </div>
               </div>
 
               {/* Buyer Message */}
               <div className="flex justify-end">
-                <div className="max-w-[80%] rounded-2xl rounded-tr-none bg-[#005C4B] text-white p-3 shadow">
-                  <p>Ready to move. Budget is around 60 Lakhs.</p>
-                  <span className="text-[9px] text-emerald-200 block text-right mt-1">11:03 PM</span>
+                <div className="max-w-[80%] rounded-2xl rounded-tr-none bg-[#005C4B] text-white p-3.5 shadow-md">
+                  <p className="font-medium">Ready to move. Budget is around 60 Lakhs.</p>
+                  <span className="text-[10px] text-emerald-200 block text-right mt-1 font-mono">11:03 PM</span>
                 </div>
               </div>
 
               {/* Bot Action: Brochure + Site Visit */}
               <div className="flex justify-start">
-                <div className="max-w-[85%] rounded-2xl rounded-tl-none bg-[#202C33] text-slate-100 p-3 shadow space-y-2.5">
-                  <p>
+                <div className="max-w-[85%] rounded-2xl rounded-tl-none bg-[#243248] border border-[#475569] text-white p-3.5 shadow-md space-y-3">
+                  <p className="font-medium">
                     शानदार! आपके बजट में हमारे पास 2 सबसे प्राइम यूनिट्स उपलब्ध हैं।
                   </p>
 
-                  <div className="p-2.5 rounded-lg bg-[#111B21] border border-slate-700 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <FileText className="w-5 h-5 text-emerald-400" />
+                  <div className="p-3 rounded-xl bg-[#141E33] border border-[#475569] flex items-center justify-between">
+                    <div className="flex items-center gap-2.5">
+                      <FileText className="w-6 h-6 text-emerald-400" />
                       <div>
-                        <div className="font-bold text-[11px] text-white">Royal_Palms_3BHK_Brochure.pdf</div>
-                        <div className="text-[9px] text-slate-400">8.4 MB • Complete Layout & Rates</div>
+                        <div className="font-black text-xs text-white">Royal_Palms_3BHK_Brochure.pdf</div>
+                        <div className="text-[10px] text-slate-300">8.4 MB • Complete Layout & Rates</div>
                       </div>
                     </div>
-                    <span className="text-[10px] text-emerald-400 font-bold underline cursor-pointer">Sent</span>
+                    <span className="text-xs text-emerald-300 font-black underline cursor-pointer">Sent</span>
                   </div>
 
-                  <p className="font-medium text-amber-300">
+                  <p className="font-bold text-amber-300">
                     📍 क्या आप इस शनिवार सुबह 11:00 AM या रविवार शाम 4:00 PM पर साइट विज़िट बुक करना चाहेंगे?
                   </p>
 
-                  <div className="flex gap-2 pt-1">
-                    <span className="px-3 py-1 rounded-full bg-[#111B21] border border-emerald-500/40 text-emerald-300 text-[10px] font-bold">
+                  <div className="flex gap-2.5 pt-1">
+                    <span className="px-3.5 py-1.5 rounded-full bg-emerald-600 text-white text-xs font-black shadow-sm">
                       [ शनिवार 11 AM ]
                     </span>
-                    <span className="px-3 py-1 rounded-full bg-[#111B21] border border-slate-700 text-slate-300 text-[10px]">
+                    <span className="px-3.5 py-1.5 rounded-full bg-[#1E293B] border border-[#475569] text-slate-200 text-xs font-semibold">
                       [ रविवार 4 PM ]
                     </span>
                   </div>
 
-                  <span className="text-[9px] text-slate-400 block text-right">11:03 PM • WACA Webhook Triggered</span>
+                  <span className="text-[10px] text-slate-300 block text-right font-mono">11:03 PM • WACA Webhook Triggered</span>
                 </div>
               </div>
             </div>
 
             {/* Bottom Callout */}
-            <div className="pt-2 border-t border-slate-800 text-center">
-              <p className="text-xs text-slate-300">
+            <div className="pt-2 border-t border-[#334155] text-center">
+              <p className="text-xs sm:text-sm text-slate-200 font-medium">
                 ⚡ <strong>नतीजा:</strong> रात 11 बजे जब आप सो रहे होते हैं, तब भी यह AI बॉट आपके ग्राहक को ब्रोशर भेजकर साइट विज़िट पक्की कर देता है।
               </p>
             </div>

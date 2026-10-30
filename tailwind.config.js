@@ -8,29 +8,45 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        agency: {
-          bg: "#080C14",
-          card: "#0D1524",
-          cardHover: "#121D33",
-          border: "#1E293B",
-          borderLight: "#334155",
-          accent: "#D4AF37", // Champagne Gold
-          accentHover: "#E5C158",
-          emerald: "#10B981",
-          emeraldDark: "#047857",
-          blue: "#38BDF8",
-          purple: "#A855F7"
+        // Royal Executive Titanium & Champagne Studio Palette
+        titanium: {
+          base: "#0F172A",     // Soft deep slate-navy (never pitch black)
+          depth: "#141E33",    // Subtle section depth
+          card: "#1E293B",     // Elevated card background
+          cardHover: "#28354D",// Hover elevation
+          border: "#334155",   // Visible crisp border
+          borderLight: "#475569",
+        },
+        champagne: {
+          50: "#FFFDF5",
+          100: "#FEF9E7",
+          200: "#FDF0C5",
+          300: "#FBE49E",
+          400: "#F7D065",     // 24K Accent
+          500: "#D4AF37",     // Primary Champagne Gold
+          600: "#B89222",
+          700: "#916F13",
+        },
+        emeraldTrust: {
+          400: "#34D399",
+          500: "#10B981",
+          600: "#059669",
+          900: "#064E3B",
+        },
+        readability: {
+          heading: "#F8FAFC",  // Crystal Pearl (highest contrast)
+          body: "#E2E8F0",     // Crisp Silver Slate (super readable, never muddy)
+          subtext: "#CBD5E1",  // Crisp secondary
+          muted: "#94A3B8",    // Supporting meta tags
         }
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-outfit)", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "system-ui", "-apple-system", "sans-serif"],
       },
       animation: {
         "shimmer": "shimmer 2.5s infinite linear",
         "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "float": "float 5s ease-in-out infinite",
-        "glow": "glow 3s ease-in-out infinite alternate",
       },
       keyframes: {
         shimmer: {
@@ -40,10 +56,6 @@ module.exports = {
         float: {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-6px)" },
-        },
-        glow: {
-          "0%": { opacity: 0.4 },
-          "100%": { opacity: 0.8 },
         }
       }
     },
