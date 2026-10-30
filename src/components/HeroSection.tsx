@@ -9,37 +9,36 @@ export default function HeroSection() {
   )}`;
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-[#141E33] via-[#0F172A] to-[#0F172A]">
-      {/* Studio Lighting Grid & Soft Ambiance (Anti-Blackout) */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#33415518_1px,transparent_1px),linear-gradient(to_bottom,#33415518_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000_80%,transparent_100%)] pointer-events-none" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[650px] h-[380px] bg-amber-500/15 blur-[140px] rounded-full pointer-events-none" />
-      <div className="absolute top-1/3 left-1/4 w-[420px] h-[280px] bg-emerald-500/12 blur-[130px] rounded-full pointer-events-none" />
+    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-[#14283F] text-white">
+      {/* Refined Radial Lighting (Subtle Blue Ambiance - No Rainbow or Neon) */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(34,75,120,0.45)_0%,transparent_100%)] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[360px] bg-[#1B3E68]/30 blur-[130px] rounded-full pointer-events-none" />
 
       <div className="container-fluid relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-7">
           {/* Eyebrow Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1E293B] border border-amber-400/40 text-amber-300 text-xs sm:text-sm font-bold shadow-md">
-            <Sparkles className="w-4 h-4 text-amber-400" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1B3554] border border-[#C39A61]/35 text-[#D4AF7A] text-xs sm:text-sm font-bold shadow-sm">
+            <Sparkles className="w-4 h-4 text-[#C39A61]" />
             <span>MOHIT P JAIN • REAL ESTATE PROPTECH SPECIALIST</span>
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#12786F] animate-pulse" />
           </div>
 
           {/* Main Headline */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.18]">
             Everything Your Real Estate Business Needs.{" "}
-            <span className="champagne-gradient-text block mt-1">One Digital Partner.</span>
+            <span className="text-[#D4AF7A] block mt-1">One Digital Partner.</span>
           </h1>
 
           {/* Hindi & English Value Proposition */}
-          <p className="text-base sm:text-xl text-[#E2E8F0] max-w-2xl mx-auto leading-relaxed font-medium">
+          <p className="text-base sm:text-xl text-[#E2E8F0] max-w-2xl mx-auto leading-relaxed font-normal">
             हम प्रॉपर्टी कारोबार को डिजिटल बनाते हैं — हाई-कन्वर्जन{" "}
-            <span className="text-amber-300 font-bold underline decoration-amber-400/40 underline-offset-4">वेबसाइट्स</span>, स्मार्ट{" "}
-            <span className="text-amber-300 font-bold underline decoration-amber-400/40 underline-offset-4">CRM</span>, बिल्डर{" "}
-            <span className="text-amber-300 font-bold underline decoration-amber-400/40 underline-offset-4">ERP</span>, मोबाइल ऐप और 24/7{" "}
-            <span className="text-emerald-300 font-bold underline decoration-emerald-400/40 underline-offset-4">AI WhatsApp सेल्स ऑटोमेशन</span>।
+            <span className="text-[#D4AF7A] font-semibold">वेबसाइट्स</span>, स्मार्ट{" "}
+            <span className="text-[#D4AF7A] font-semibold">CRM</span>, बिल्डर{" "}
+            <span className="text-[#D4AF7A] font-semibold">ERP</span>, मोबाइल ऐप और 24/7{" "}
+            <span className="text-[#34D399] font-semibold">AI WhatsApp सेल्स ऑटोमेशन</span>।
           </p>
 
-          <p className="text-xs sm:text-sm text-slate-300 font-semibold tracking-wide bg-[#1E293B]/70 border border-[#334155] py-1.5 px-4 rounded-lg inline-block">
+          <p className="text-xs sm:text-sm text-slate-300 font-semibold tracking-wide bg-[#1B3554]/70 border border-white/10 py-1.5 px-4 rounded-lg inline-block">
             Designed specifically for Property Dealers, Brokers, Builders & Township Developers.
           </p>
 
@@ -47,40 +46,40 @@ export default function HeroSection() {
           <div className="flex flex-wrap items-center justify-center gap-3.5 sm:gap-4 pt-3">
             <a
               href="#quote-builder"
-              className="flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-slate-950 font-black text-sm sm:text-base shadow-xl shadow-amber-500/25 transition-all btn-tactile"
+              className="flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#12786F] hover:bg-[#0E635C] text-white font-black text-sm sm:text-base shadow-xl shadow-[#12786F]/25 transition-all btn-tactile"
             >
-              <Calculator className="w-5 h-5 text-slate-950" />
+              <Calculator className="w-5 h-5 text-white" />
               <span>Instant Price Calculator</span>
-              <ArrowRight className="w-4 h-4 text-slate-950" />
+              <ArrowRight className="w-4 h-4 text-white" />
             </a>
 
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-emerald-600/25 transition-all btn-tactile"
+              className="flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#1B3554] hover:bg-[#23456D] border border-white/20 text-white font-extrabold text-sm sm:text-base shadow-md transition-all btn-tactile"
             >
-              <MessageSquare className="w-5 h-5 fill-white" />
+              <MessageSquare className="w-5 h-5 fill-white/20 text-[#34D399]" />
               <span>WhatsApp Mohit Directly</span>
             </a>
 
             <a
               href="#demos"
-              className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#1E293B] hover:bg-[#28354D] border border-[#475569] text-white font-bold text-sm transition-all btn-tactile"
+              className="flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#14283F] hover:bg-[#1B3554] border border-white/10 text-slate-200 hover:text-white font-bold text-sm transition-all btn-tactile"
             >
-              <PlayCircle className="w-4 h-4 text-amber-400" />
+              <PlayCircle className="w-4 h-4 text-[#D4AF7A]" />
               <span>See Software Demos</span>
             </a>
           </div>
 
-          {/* Quick Pillar Bullets (Titanium Studio Cards) */}
+          {/* Quick Pillar Bullets (Structured Navy Cards) */}
           <div className="pt-8 grid grid-cols-2 sm:grid-cols-4 gap-3.5 max-w-3xl mx-auto">
             {AGENCY_CONFIG.heroStats.map((stat, i) => (
               <div
                 key={i}
-                className="p-4 rounded-xl bg-[#1E293B] border border-[#334155] text-center space-y-1 hover:border-amber-400/60 shadow-md transition-colors"
+                className="luxury-card-navy p-4 rounded-xl text-center space-y-1"
               >
-                <div className="text-2xl sm:text-3xl font-black text-amber-400">
+                <div className="text-2xl sm:text-3xl font-black text-[#D4AF7A]">
                   {stat.value}
                 </div>
                 <div className="text-xs font-bold text-white">{stat.label}</div>
@@ -91,13 +90,13 @@ export default function HeroSection() {
 
           {/* Trust Guarantees */}
           <div className="pt-6 flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-slate-200">
-            <span className="flex items-center gap-1.5 bg-[#1E293B]/60 px-3 py-1 rounded-full border border-[#334155]">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" /> 100% Code & Database Ownership
+            <span className="flex items-center gap-1.5 bg-[#1B3554]/60 px-3 py-1 rounded-full border border-white/10">
+              <ShieldCheck className="w-4 h-4 text-[#34D399]" /> 100% Code & Database Ownership
             </span>
-            <span className="flex items-center gap-1.5 bg-[#1E293B]/60 px-3 py-1 rounded-full border border-[#334155]">
-              <Zap className="w-4 h-4 text-amber-400" /> 3-5 Days Turnaround Time
+            <span className="flex items-center gap-1.5 bg-[#1B3554]/60 px-3 py-1 rounded-full border border-white/10">
+              <Zap className="w-4 h-4 text-[#D4AF7A]" /> 3-5 Days Turnaround Time
             </span>
-            <span className="flex items-center gap-1.5 bg-[#1E293B]/60 px-3 py-1 rounded-full border border-[#334155]">
+            <span className="flex items-center gap-1.5 bg-[#1B3554]/60 px-3 py-1 rounded-full border border-white/10">
               <Layers className="w-4 h-4 text-sky-400" /> Zero Monthly Locked Hostage Fees
             </span>
           </div>

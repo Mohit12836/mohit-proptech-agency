@@ -5,20 +5,20 @@ import { Phone, MessageSquare, Mail, MapPin, Heart, Shield } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0A101D] border-t border-[#334155] text-slate-300 text-xs sm:text-sm pt-16 pb-24">
+    <footer className="bg-[#0E1B2B] border-t border-white/10 text-slate-300 text-xs sm:text-sm pt-16 pb-24">
       <div className="container-fluid space-y-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Col */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-amber-400 flex items-center justify-center text-slate-950 font-black text-xl shadow-md">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D4AF7A] to-[#C39A61] flex items-center justify-center text-[#14283F] font-black text-xl shadow-md">
                 M
               </div>
               <div>
                 <span className="font-extrabold text-base tracking-wider text-white">
                   {AGENCY_CONFIG.name}
                 </span>
-                <p className="text-[11px] text-amber-300 font-bold uppercase tracking-wide">
+                <p className="text-[11px] text-[#D4AF7A] font-bold uppercase tracking-wide">
                   PROPTECH & DIGITAL GROWTH
                 </p>
               </div>
@@ -28,8 +28,8 @@ export default function Footer() {
               India's specialized PropTech partner helping property dealers, brokers, and builders scale with websites, CRM, builder ERP, and autonomous WhatsApp sales closers.
             </p>
 
-            <div className="flex items-center gap-2 text-emerald-300 text-xs font-bold bg-[#141E33] p-2 rounded-lg border border-[#334155]">
-              <Shield className="w-4 h-4 text-emerald-400 shrink-0" />
+            <div className="flex items-center gap-2 text-emerald-300 text-xs font-bold bg-[#14283F] p-2.5 rounded-lg border border-white/10">
+              <Shield className="w-4 h-4 text-[#34D399] shrink-0" />
               <span>100% Client Code & Data Ownership Guaranteed</span>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function Footer() {
                   href="https://samriddhi-property-broker-cxj1.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-amber-300 transition-colors block font-bold text-xs"
+                  className="text-white hover:text-[#D4AF7A] transition-colors block font-bold text-xs"
                 >
                   Samriddhi Classic Broker Portal →
                 </a>
@@ -73,7 +73,7 @@ export default function Footer() {
                   href="https://samriddhi-property-redesign.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-emerald-300 transition-colors block font-bold text-xs"
+                  className="text-white hover:text-[#34D399] transition-colors block font-bold text-xs"
                 >
                   10-Theme Master Design Engine →
                 </a>
@@ -90,7 +90,7 @@ export default function Footer() {
             <div className="space-y-2.5 text-slate-200">
               <div>
                 <span className="text-slate-400 block text-[10px] font-bold">DIRECT PHONE:</span>
-                <a href={`tel:${AGENCY_CONFIG.phone}`} className="font-black text-white hover:text-amber-300 text-sm">
+                <a href={`tel:${AGENCY_CONFIG.phone}`} className="font-black text-white hover:text-[#D4AF7A] text-sm">
                   {AGENCY_CONFIG.phone}
                 </a>
               </div>
@@ -101,7 +101,7 @@ export default function Footer() {
                   href={`https://wa.me/${AGENCY_CONFIG.rawPhone}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-bold text-emerald-300 hover:underline text-xs"
+                  className="font-bold text-[#34D399] hover:underline text-xs"
                 >
                   Chat with Mohit P Jain
                 </a>
@@ -115,12 +115,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-[#334155] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-medium">
+        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-normal">
           <div>
             © {new Date().getFullYear()} MOHIT P JAIN • All Rights Reserved. Powered by ViSmart AI.
           </div>
           <div>
-            Built with surgical precision for Indian Real Estate
+            Designed with 60-30-10 Color Architecture for Indian PropTech
           </div>
         </div>
       </div>
