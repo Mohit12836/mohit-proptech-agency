@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    max-width: 100%;
+    overflow-x: clip;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    background-color: #080C14;
+    color: #F8FAFC;
+  }
+
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  img, video, svg, canvas, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* Fluid Auto-Fit Container standard */
+.container-fluid {
+  width: 100%;
+  max-width: min(100% - 2rem, 1280px);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 3vw, 2.5rem);
+}
+
+/* Glassmorphism Luxury Utilities */
+.glass-panel {
+  background: rgba(13, 21, 36, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(212, 175, 55, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(212, 175, 55, 0.15);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFF6D6 0%, #F5CE66 50%, #C49726 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.emerald-gradient-text {
+  background: linear-gradient(135deg, #A7F3D0 0%, #34D399 50%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Tactile Spring Buttons */
+.btn-tactile {
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+.btn-tactile:hover {
+  transform: translateY(-2px) scale(1.01);
+}
+.btn-tactile:active {
+  transform: translateY(1px) scale(0.98);
+}
